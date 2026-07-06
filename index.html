@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>África Burger — Cada hambúrguer é um destino</title>
+  <meta name="description" content="Uma viagem gastronómica por África. Hambúrgueres artesanais inspirados em Luanda, Soweto, Kigali, Cairo, Zanzibar e Dakar. Feitos na grelha, entregues em Luanda.">
+  <meta name="theme-color" content="#F2670C">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="canonical" href="https://africaburger.ao/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="África Burger — Cada hambúrguer é um destino">
+  <meta property="og:description" content="Uma viagem gastronómica por África. Seis cidades, seis hambúrgueres exclusivos, feitos na grelha.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:locale" content="pt_AO">
+  <meta property="og:site_name" content="África Burger">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="África Burger — Cada hambúrguer é um destino">
+  <meta name="twitter:description" content="Uma viagem gastronómica por África, servida entre dois pães.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "África Burger",
+    "slogan": "Cada hambúrguer é um destino.",
+    "servesCuisine": ["Hambúrgueres", "Cozinha africana contemporânea"],
+    "priceRange": "Kz 3.900 – Kz 7.200",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua KWN, Edifício África Burger, Talatona",
+      "addressLocality": "Luanda",
+      "addressCountry": "AO"
+    },
+    "telephone": "+244923456789",
+    "openingHours": "Mo-Su 11:00-23:00",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "2500" }
+  }
+  </script>
+
+  <link rel="preload" href="assets/fonts/anton-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader" aria-hidden="true">
+    <svg viewBox="0 0 240 90" aria-hidden="true">
+      <path d="M12 72 C 58 14, 96 14, 118 46 C 140 78, 178 78, 226 22" fill="none" stroke="rgba(243,234,219,.14)" stroke-width="2"/>
+      <path d="M12 72 C 58 14, 96 14, 118 46 C 140 78, 178 78, 226 22" fill="none" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="340" stroke-dashoffset="340" style="animation:abDash 2s cubic-bezier(.65,0,.35,1) .15s forwards"/>
+      <circle cx="12" cy="72" r="4" fill="#E4B24C"/>
+      <circle cx="226" cy="22" r="4" fill="#F97316"/>
+    </svg>
+    <img class="loader-logo" src="assets/logo-512.png" alt="">
+    <div class="loader-title">ÁFRICA BURGER</div>
+    <div class="loader-sub">A preparar a sua viagem gastronómica…</div>
+    <div class="loader-bar"><i></i></div>
+  </div>
+
+  <!-- ============ CURSOR ============ -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-tag" aria-hidden="true"></div>
+
+  <!-- ============ NAVEGAÇÃO ============ -->
+  <header id="nav" class="tema-laranja">
+    <a class="nav-logo" href="#hero" data-cursor aria-label="África Burger — início">
+      <img src="assets/logo-512.png" alt="">
+      <b>ÁFRICA<small>BURGER</small></b>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#mapa" data-cursor>A VIAGEM</a>
+      <a href="#destino-luanda" data-cursor>CARDÁPIO</a>
+      <a href="#mapa" data-cursor>DESTINOS</a>
+      <a href="#sobre" data-cursor>SOBRE NÓS</a>
+      <a href="#contacto" data-cursor>CONTACTO</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="som-btn" data-cursor aria-label="Ativar ou desativar som ambiente" aria-pressed="false">
+        <span class="barras" aria-hidden="true"><i></i><i></i><i></i></span><b>SOM</b>
+      </button>
+      <a class="btn-pill" id="nav-pedir" href="#destino-luanda" data-cursor>PEDIR AGORA
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </a>
+      <button class="nav-burger" data-cursor aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- menu mobile -->
+  <div id="menu-mobile" role="dialog" aria-label="Menu">
+    <a href="#mapa" data-cursor>A Viagem</a>
+    <a href="#destino-luanda" data-cursor>Cardápio</a>
+    <a href="#sobre" data-cursor>Sobre Nós</a>
+    <a href="#contacto" data-cursor>Contacto</a>
+    <div class="mm-foot">
+      <a class="btn-pill" href="#destino-luanda" data-cursor>PEDIR AGORA</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" aria-label="África Burger — cada hambúrguer é um destino">
+    <video id="vid-a" autoplay muted playsinline preload="auto" poster="assets/video-poster.jpg" src="assets/hero-video.mp4" aria-hidden="true"></video>
+    <video id="vid-b" muted playsinline preload="auto" src="assets/hero-video.mp4" style="opacity:0" aria-hidden="true"></video>
+    <div class="hero-tinta" aria-hidden="true"></div>
+
+    <div class="hero-conteudo">
+      <p class="hero-eyebrow">CADA HAMBÚRGUER É UM DESTINO</p>
+      <h1>ÁFRICA<br>BURGER</h1>
+      <div class="hero-cta">
+        <a class="btn-hero" href="#mapa" data-cursor data-tag="BORA!">
+          COMEÇAR A VIAGEM <span class="seta">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-rota" aria-hidden="true">
+      <svg id="hero-rota-svg" viewBox="0 0 200 640" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+
+    <div class="hero-social">
+      <a href="#" data-social="instagram" data-cursor aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8 0-3.2 0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+      </a>
+      <a href="#" data-social="facebook" data-cursor aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg>
+      </a>
+      <a href="#" data-social="whatsapp" data-cursor aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6zM12 .3A11.7 11.7 0 0 0 1.9 17.9L.3 23.7l6-1.6A11.7 11.7 0 1 0 12 .3z"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>SCROLL PARA EXPLORAR</span>
+      <div class="rato"><i></i></div>
+    </div>
+  </section>
+
+  <!-- ============ A VIAGEM (rota contínua) ============ -->
+  <div id="viagem">
+    <div id="rota-camada" aria-hidden="true">
+      <svg>
+        <defs>
+          <linearGradient id="rotaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E4B24C"/>
+            <stop offset="1" stop-color="#F97316"/>
+          </linearGradient>
+        </defs>
+        <path id="rota-base" d=""/>
+        <path id="rota-prog" d=""/>
+      </svg>
+      <div id="gps-carro">
+        <span class="halo"></span>
+        <svg viewBox="0 0 64 40" aria-hidden="true">
+          <path d="M6 26c0-2 1-4 3-4h5l5-9c.7-1.2 2-2 3.4-2H40c1.5 0 2.8.8 3.5 2l4.6 9H55c2.2 0 4 1.8 4 4v5c0 1.6-1.3 3-3 3h-2a6 6 0 0 1-12 0H24a6 6 0 0 1-12 0H9c-1.7 0-3-1.4-3-3v-5Z" fill="#F97316"/>
+          <path d="M21 22l4-7.5c.3-.6.9-1 1.6-1H31v8.5H21Zm13 0v-8.5h5.4c.7 0 1.3.4 1.6 1L45 22H34Z" fill="#191007"/>
+          <circle cx="18" cy="34" r="4.6" fill="#191007"/><circle cx="18" cy="34" r="2" fill="#F3EADB"/>
+          <circle cx="48" cy="34" r="4.6" fill="#191007"/><circle cx="48" cy="34" r="2" fill="#F3EADB"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ---------- MAPA / DESTINOS ---------- -->
+    <section id="mapa" aria-label="A rota dos destinos">
+      <img class="mapa-marca" src="assets/logo-512.png" alt="" aria-hidden="true">
+      <div class="mapa-grid">
+        <div class="mapa-texto">
+          <div class="titulo-borda" data-reveal>
+            <p class="eyebrow">A VIAGEM CONTINUA</p>
+            <h2>Descubra<br>sabores que<br>cruzam fronteiras</h2>
+          </div>
+          <p class="mapa-desc" data-reveal>
+            Cada cidade guarda uma história.<br>
+            Cada hambúrguer carrega uma cultura.<br>
+            <b>Clique no seu próximo destino</b> e embarque numa nova experiência.
+          </p>
+          <button class="btn-ghost" id="btn-como" data-cursor data-reveal>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor" stroke="none"/></svg>
+            COMO FUNCIONA
+          </button>
+        </div>
+        <div id="mapa-palco" aria-label="Mapa da rota">
+          <svg class="mapa-rota" viewBox="0 0 800 760" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <path class="mr-linha" id="mr-linha" d=""/>
+          </svg>
+          <div id="mapa-carro" aria-hidden="true">
+            <svg viewBox="0 0 64 40">
+              <path d="M6 26c0-2 1-4 3-4h5l5-9c.7-1.2 2-2 3.4-2H40c1.5 0 2.8.8 3.5 2l4.6 9H55c2.2 0 4 1.8 4 4v5c0 1.6-1.3 3-3 3h-2a6 6 0 0 1-12 0H24a6 6 0 0 1-12 0H9c-1.7 0-3-1.4-3-3v-5Z" fill="#F97316"/>
+              <path d="M21 22l4-7.5c.3-.6.9-1 1.6-1H31v8.5H21Zm13 0v-8.5h5.4c.7 0 1.3.4 1.6 1L45 22H34Z" fill="#191007"/>
+              <circle cx="18" cy="34" r="4.6" fill="#191007"/><circle cx="18" cy="34" r="2" fill="#F3EADB"/>
+              <circle cx="48" cy="34" r="4.6" fill="#191007"/><circle cx="48" cy="34" r="2" fill="#F3EADB"/>
+            </svg>
+          </div>
+          <!-- pins gerados por JS -->
+        </div>
+      </div>
+
+      <div id="stats" data-reveal><!-- gerado por JS --></div>
+
+      <div class="mapa-quote" data-reveal>
+        <span class="aspas">“</span>
+        <p id="mapa-quote-texto"></p>
+      </div>
+    </section>
+
+    <!-- ---------- DESTINOS (gerados por JS) ---------- -->
+    <div id="destinos"></div>
+
+    <!-- ---------- SOBRE ---------- -->
+    <section id="sobre" aria-label="Sobre a África Burger">
+      <div class="sobre-grid">
+        <div>
+          <div class="s-eyebrow eyebrow" data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19"/></svg>
+            SOBRE NÓS
+          </div>
+          <h2 data-reveal>Uma viagem<br><span class="destaque">feita de sabor,</span><br>cultura e paixão.</h2>
+          <div class="s-ornamento" aria-hidden="true">✦</div>
+          <div id="sobre-paragrafos"></div>
+          <p class="s-quote" data-reveal id="sobre-quote"></p>
+          <div class="s-chips" id="sobre-chips" data-reveal></div>
+        </div>
+        <div class="sobre-foto" data-reveal="right">
+          <img src="assets/about-hero.png" alt="Chef a temperar um hambúrguer África Burger com a rota dos destinos" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- HISTÓRIAS ---------- -->
+    <section id="historias" aria-label="A nossa história">
+      <div class="hist-grid">
+        <div class="hist-intro" data-reveal>
+          <p class="eyebrow">✦ A NOSSA HISTÓRIA</p>
+          <h3>Feita por pessoas,<br>para pessoas.</h3>
+          <p>Conheça mais sobre a nossa jornada, valores e o propósito que nos move todos os dias.</p>
+        </div>
+        <!-- cartões gerados por JS -->
+      </div>
+    </section>
+
+    <!-- ---------- CHEGADA ---------- -->
+    <section id="chegada" aria-label="Fim da rota">
+      <span class="destino-fundo" aria-hidden="true" style="background-image:url('assets/cidades/luanda.jpg')"></span>
+      <div data-reveal>
+        <div class="chegada-pin">
+          <span class="aneis" aria-hidden="true"></span>
+          <span class="gota"><img src="assets/logo-512.png" alt=""></span>
+        </div>
+        <p class="eyebrow">FIM DA ROTA</p>
+        <h2>Você chegou<br>ao destino.</h2>
+        <p>A viagem termina onde o sabor começa: na nossa grelha, em Luanda.</p>
+        <a class="btn-pill" id="btn-pedido-final" href="#" data-cursor target="_blank" rel="noopener">
+          FAZER O MEU PEDIDO <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </div><!-- /#viagem -->
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section id="news" aria-label="Newsletter">
+    <div class="news-card" data-reveal>
+      <div class="news-burger" style="background-image:url('assets/newsletter-burger.png')" aria-hidden="true"></div>
+      <div class="news-info">
+        <p class="eyebrow" id="news-eyebrow"></p>
+        <h3 id="news-titulo"></h3>
+        <p id="news-texto"></p>
+      </div>
+      <div>
+        <form id="news-form" novalidate>
+          <label class="sr-only" for="news-email">O seu melhor email</label>
+          <input id="news-email" type="email" placeholder="O seu melhor email" required autocomplete="email">
+          <button class="news-btn" type="submit" data-cursor>INSCREVER-SE <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="news-beneficios" id="news-beneficios"></div>
+      </div>
+      <div class="news-ok" role="status">✦ Bem-vindo a bordo! A sua viagem começou.</div>
+    </div>
+  </section>
+
+  <div id="divisor-africa" aria-hidden="true">
+    <img src="assets/logo-512.png" alt="">
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contacto">
+    <div id="foot-grid"><!-- gerado por JS --></div>
+    <div id="foot-confianca"><div class="fc-grid" id="fc-grid"></div></div>
+    <div id="foot-fim">
+      <div class="ff-grid">
+        <small>© 2026 África Burger. Todos os direitos reservados.</small>
+        <p class="ff-frase"><span id="ff-frase1"></span> <span class="laranja" id="ff-frase2"></span> <span aria-hidden="true">♡</span></p>
+        <small>Desenvolvido com <span style="color:#F97316">♥</span> em Angola 🇦🇴</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ HUD GPS + TOAST ============ -->
+  <div id="gps-hud" aria-hidden="true">
+    <span class="hud-icone">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5.4-8 12-8 12S4 15.4 4 10a8 8 0 0 1 8-8Z"/></svg>
+    </span>
+    <span>
+      <span class="hud-rotulo">EM VIAGEM</span>
+      <span class="hud-valor" id="hud-cidade">—</span>
+    </span>
+    <span class="hud-prog"><i id="hud-prog-i"></i></span>
+  </div>
+  <div id="gps-toast" role="status" aria-live="polite">
+    <span class="gota" aria-hidden="true"></span>
+    <span><b id="toast-titulo">—</b><br><span id="toast-sub">—</span></span>
+  </div>
+
+  <!-- WhatsApp flutuante -->
+  <a id="wa-flutuante" href="#" target="_blank" rel="noopener" aria-label="Falar connosco no WhatsApp" data-cursor data-tag="OLÁ!">
+    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6zM12 .3A11.7 11.7 0 0 0 1.9 17.9L.3 23.7l6-1.6A11.7 11.7 0 1 0 12 .3z"/></svg>
+  </a>
+
+  <!-- ============ OVERLAY DO DESTINO ============ -->
+  <div id="overlay" role="dialog" aria-modal="true" aria-label="Detalhe do hambúrguer" hidden>
+    <div class="ov-caixa">
+      <div class="ov-top">
+        <button class="ov-voltar" id="ov-voltar" data-cursor>
+          <span class="seta" aria-hidden="true">←</span> VOLTAR À VIAGEM
+        </button>
+        <button class="ov-fechar" id="ov-fechar" data-cursor aria-label="Fechar">✕</button>
+      </div>
+      <div class="ov-grid">
+        <div class="ov-media">
+          <div class="ov-cabeca">
+            <p class="ov-eyebrow"><span aria-hidden="true">📍</span> DESTINO ATUAL</p>
+            <h3 id="ov-cidade">—</h3>
+            <p class="ov-pais" id="ov-pais">—</p>
+            <p class="ov-sub" id="ov-titulo">—</p>
+            <p class="ov-desc" id="ov-desc">—</p>
+          </div>
+          <div class="ov-palco" id="ov-palco">
+            <div class="ov-camada" id="ov-camada"></div>
+            <div class="ov-badges-linha" aria-hidden="true">
+              <span id="ov-coord">—</span><span id="ov-slug">—</span>
+            </div>
+            <span class="ov-badge" id="ov-modo-badge">FOTO · PRODUTO</span>
+          </div>
+          <div class="ov-thumbs" id="ov-thumbs" role="tablist" aria-label="Modo de visualização"></div>
+          <div class="ov-selos">
+            <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.2 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.5-2.4 1.5-3.5.5 1.5 1.5 3 2 3Z"/></svg> GRELHADO NA HORA</span>
+            <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> PREPARO <span id="ov-preparo">15–20 MIN</span></span>
+            <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.5-9A5.6 5.6 0 0 1 12 6.3 5.6 5.6 0 0 1 21.5 12c-2.5 4.4-9.5 9-9.5 9Z"/></svg> MAIS PEDIDO</span>
+          </div>
+        </div>
+
+        <div class="ov-opcoes">
+          <h4>Ingredientes</h4>
+          <ul class="ov-ingr" id="ov-ingredientes"></ul>
+
+          <h4>Extras</h4>
+          <div class="ov-extras" id="ov-extras"></div>
+
+          <h4>Escolha o tamanho</h4>
+          <div class="ov-tamanhos" id="ov-tamanhos"></div>
+
+          <h4>Complemente a sua viagem</h4>
+          <div class="ov-comps" id="ov-comps"></div>
+
+          <div class="ov-rodape">
+            <div class="ov-qtd" aria-label="Quantidade">
+              <button id="ov-menos" data-cursor aria-label="Diminuir quantidade">−</button>
+              <b id="ov-qtd-num" aria-live="polite">1</b>
+              <button id="ov-mais" data-cursor aria-label="Aumentar quantidade">+</button>
+            </div>
+            <a class="btn-pill ov-pedir" id="ov-pedir" href="#" target="_blank" rel="noopener" data-cursor data-tag="WHATSAPP">
+              PEDIR AGORA NO WHATSAPP
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6zM12 .3A11.7 11.7 0 0 0 1.9 17.9L.3 23.7l6-1.6A11.7 11.7 0 1 0 12 .3z"/></svg>
+            </a>
+            <b class="ov-total" id="ov-total">—</b>
+          </div>
+          <button class="ov-continuar" id="ov-continuar" data-cursor>
+            CONTINUAR VIAGEM <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="ov-proximos">
+        <span class="rotulo">QUAL SERÁ O<br>PRÓXIMO DESTINO?</span>
+        <div class="lista" id="ov-proximos-lista"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
