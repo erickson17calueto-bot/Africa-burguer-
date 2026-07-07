@@ -1,12 +1,6 @@
-# Configuração de publicação do África Burger no Netlify
-# Site estático (sem passo de build): publica a raiz do repositório.
-
 [build]
-  publish = "."
-  command = ""
+  publish = "/"
 
-# Cabeçalhos de cache: assets versionados podem ser cacheados por muito tempo,
-# mas o HTML deve ser sempre revalidado para refletir alterações no deploy.
 [[headers]]
   for = "/*.html"
   [headers.values]
